@@ -1,0 +1,165 @@
+body {
+    font-family:'Anton', sans-serif;
+    font-weight: bolder;
+    background-color: rgb(19, 22, 35);
+
+    h1 {
+        color: rgb(255, 242, 174);
+        font-size: 40px;
+    }
+}
+
+#app {
+    transition: opacity 0.5s ease; // Fadein lorsque Vue.js charge l'application
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &[v-cloak] {
+        opacity: 0;
+    }
+}
+
+.calendar {
+    $day-size: 100px; // Grosseur d'un carré qui sont en border-box
+    display: flex;
+    flex-wrap: wrap;
+    width: $day-size * 7; // 7 jours par semaine (ligne)
+    
+
+    // Chaque jour (case) du calendrier
+    .day,.jour {
+        box-sizing: border-box;
+        width: $day-size;
+        height: $day-size;
+        border-radius: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 36px;
+        font-weight: 300;
+        color:rgb(68, 68, 68);
+
+        // Lorsqu'il y a des représentations pour cette journée
+        &.hasshows {
+            color: rgb(246, 255, 246);
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        // Lorsque c'est la journée sélectionnée
+        &.selected {
+            border:2px solid rgb(255, 242, 174);
+            color: rgb(255, 242, 174);
+            
+        }
+    }
+
+    .jour {  
+        height: 30px;
+        margin-top: 50px;
+        margin-bottom: 15px;
+        color:rgb(255, 242, 174);
+    }
+
+}
+
+.selected-infos {
+    
+    color:rgb(224, 224, 224);
+    width: 500px;
+    font-size: 22px;
+    font-weight: 300;
+    
+
+    .sous-titre {
+        font-size: 34px;
+        font-weight: 300;
+    }
+
+    h2 {
+        text-align: center;
+        font-size: 34px;
+    }
+
+    // Lorsqu'il n'y a pas de représentation
+    .empty {
+        text-align: center;
+        font-size: 24px;
+        color: #777;
+        margin-top: 50px;
+        font-weight: 300;
+    }
+
+    .restant {
+        font-weight: 300;
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    .shows {
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        // Chaque représentation
+        .show {
+            width: 100%;
+            margin-bottom: 50px;
+
+            .title {
+                font-size: 34px;
+                font-weight: 300;
+            }
+
+            .speaker {
+                font-size: 24px;
+                font-weight: 300;
+            }
+
+            .location {
+                border-bottom: 1px solid rgb(255, 242, 174);
+                margin-top: 10px;
+                margin-bottom: 10px;
+                margin-right: 10px;
+                font-weight: 300;
+                font-size: 24px;
+            }
+
+            .description {
+                display: flex;
+                font-weight: 300;
+
+                div {
+                    line-height: 1.5em;
+                }
+            }
+
+            // Bouton de réservation
+            .book-bt {
+                margin-top: 10px;
+                padding: 10px;
+                display: inline-block;
+                background-color: rgb(255, 242, 174);
+                border-radius: 5px;
+                color: rgb(19, 22, 35);
+                cursor: pointer;
+                user-select: none;
+
+                &:hover {
+                    background-color: rgb(255, 253, 223);  
+                }
+
+                &.disabled {
+                    background-color: rgb(75, 75, 75);
+                    color: #888;
+                    cursor: default;
+                    border: none;
+                }
+            }
+        }
+    }
+}
+
+

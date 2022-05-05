@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Spectacles</title>
+        <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+    
+        <div id="app" v-cloak>
+
+            <h1>Avril 2022</h1>
+
+            <div class="calendar">
+
+                <div class="jour">Dim</div>
+                <div class="jour">Lun</div>
+                <div class="jour">Mar</div>
+                <div class="jour">Mer</div>
+                <div class="jour">Jeu</div>
+                <div class="jour">Ven</div>
+                <div class="jour">Sam</div>
+
+                <div class="day" v-for="jour of jour_vide">{{ jour.jour_vide }}</div>
+
+                <div class="day" :class="{ selected:select == journee },{ hasshows:journee.shows.length != 0 }" @click="getInfo(journee)" v-for="journee of journees">{{ journee.date }}</div>
+               
+            </div>
+
+            <div class="selected-infos">
+
+                <h2 class="sous-titre">{{ date }} Avril 2022</h2>
+
+                <div class="empty" v-show="spectacle == 0">Aucune représentation</div>
+
+                <div class="shows" v-for="show of info_show">
+
+                    <div class="show">
+                        <div class="title">{{ show.title }}</div>
+                        <div class="speaker">{{ show.speaker }}</div>
+                        <div class="location">{{ show.location }}</div>
+                        <div class="description" v-html="show.description"></div>
+
+                    <div>
+                        <div class="book-bt" :class="{ disabled:show.total_seats_left == 0 }" @click="getSeat(show)">Réserver</div>
+                        <p class="restant">{{ show.total_seats_left }} places restantes</p> 
+                    </div> 
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://unpkg.com/vue@next"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>

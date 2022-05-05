@@ -1,0 +1,182 @@
+body {
+  font-family: 'Anton', sans-serif;
+  font-weight: bolder;
+  background-color: #131623;
+}
+
+body h1 {
+  color: #fff2ae;
+  font-size: 40px;
+}
+
+#app {
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#app[v-cloak] {
+  opacity: 0;
+}
+
+.calendar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 700px;
+}
+
+.calendar .day, .calendar .jour {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  border-radius: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 36px;
+  font-weight: 300;
+  color: #444444;
+}
+
+.calendar .day.hasshows, .calendar .jour.hasshows {
+  color: #f6fff6;
+  font-weight: normal;
+  cursor: pointer;
+}
+
+.calendar .day.selected, .calendar .jour.selected {
+  border: 2px solid #fff2ae;
+  color: #fff2ae;
+}
+
+.calendar .jour {
+  height: 30px;
+  margin-top: 50px;
+  margin-bottom: 15px;
+  color: #fff2ae;
+}
+
+.selected-infos {
+  color: #e0e0e0;
+  width: 500px;
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.selected-infos .sous-titre {
+  font-size: 34px;
+  font-weight: 300;
+}
+
+.selected-infos h2 {
+  text-align: center;
+  font-size: 34px;
+}
+
+.selected-infos .empty {
+  text-align: center;
+  font-size: 24px;
+  color: #777;
+  margin-top: 50px;
+  font-weight: 300;
+}
+
+.selected-infos .restant {
+  font-weight: 300;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.selected-infos .shows {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.selected-infos .shows .show {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.selected-infos .shows .show .title {
+  font-size: 34px;
+  font-weight: 300;
+}
+
+.selected-infos .shows .show .speaker {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.selected-infos .shows .show .location {
+  border-bottom: 1px solid #fff2ae;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.selected-infos .shows .show .description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-weight: 300;
+}
+
+.selected-infos .shows .show .description div {
+  line-height: 1.5em;
+}
+
+.selected-infos .shows .show .book-bt {
+  margin-top: 10px;
+  padding: 10px;
+  display: inline-block;
+  background-color: #fff2ae;
+  border-radius: 5px;
+  color: #131623;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.selected-infos .shows .show .book-bt:hover {
+  background-color: #fffddf;
+}
+
+.selected-infos .shows .show .book-bt.disabled {
+  background-color: #4b4b4b;
+  color: #888;
+  cursor: default;
+  border: none;
+}
+/*# sourceMappingURL=style.css.map */
